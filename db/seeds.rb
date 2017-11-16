@@ -9,12 +9,29 @@ require 'random_data'
    )
  end
  users = User.all
-
+#standard user
 User.create!(
-  email:  'dvcv92@gmail.com',
+  email:  'standard@gmail.com',
   password:   "password",
   password_confirmation: 'password',
-  confirmed_at: Time.zone.now
+  confirmed_at: Time.zone.now,
+  role: :standard
+)
+#admin user
+User.create!(
+  email:  'admin@gmail.com',
+  password:   "password",
+  password_confirmation: 'password',
+  confirmed_at: Time.zone.now,
+  role: :admin
+)
+#premium user
+User.create!(
+  email:  'premium@gmail.com',
+  password:   "password",
+  password_confirmation: 'password',
+  confirmed_at: Time.zone.now,
+  role: :premium
 )
 users = User.all
 
