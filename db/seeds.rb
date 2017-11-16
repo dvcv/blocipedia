@@ -3,7 +3,7 @@ require 'random_data'
 # Create Users
  5.times do
    User.create!(
-   email:    RandomData.random_email,
+   email:    Faker::Internet.unique.email,
    password: RandomData.random_sentence,
    confirmed_at: Time.zone.now
    )
@@ -38,8 +38,8 @@ users = User.all
 # Create Wikis
 50.times do
  Wiki.create!(
-   title:  RandomData.random_sentence,
-   body:   RandomData.random_paragraph,
+   title:  Faker::FamilyGuy.location,
+   body:   Faker::FamilyGuy.quote,
    user: users.sample
  )
 end
