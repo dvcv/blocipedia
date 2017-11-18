@@ -38,7 +38,7 @@ users = User.all
 # Create Wikis
 50.times do
  Wiki.create!(
-   title:  Faker::FamilyGuy.location,
+   title:  Faker::Music.instrument,
    body:   Faker::FamilyGuy.quote,
    user: users.sample
  )

@@ -60,6 +60,7 @@ class WikisController < ApplicationController
     end
   end
 
+private
   def authorize_user
     wiki = Wiki.find(params[:id])
     unless current_user == wiki.user || current_user.admin?
