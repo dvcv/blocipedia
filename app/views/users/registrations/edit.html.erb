@@ -45,7 +45,7 @@
   <%= link_to "Upgrade to Premium", new_charge_path, class: 'btn btn-success' %>
 <% elsif current_user.premium?%>
   <h3>Downgrade to Standard Account</h3>
-  <%= link_to " ", "#", class: 'glyphicon glyphicon-chevron-up' %>
+  <%= button_to "Downgrade", downgrade_to_standard_path, data: { confirm: "Are you sure?" }, method: :post %>
 <% end %>
 
 
