@@ -30,13 +30,15 @@
       <% end %>
     </div>
 
+    <% if user_signed_in? %>
+      <div>
+         <ul class="nav nav-tabs">
+           <li><%= link_to "Home", root_path %></li>
+           <li><%= link_to "Wikis", wikis_path %></li>
+         </ul>
+      </div>
+    <% end %>
 
-    <div>
-       <ul class="nav nav-tabs">
-         <li><%= link_to "Home", root_path %></li>
-         <li><%= link_to "Wikis", wikis_path %></li>
-       </ul>
-    </div>
 
     <%= yield %>
   </div>
