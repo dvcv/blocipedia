@@ -1,7 +1,11 @@
-<h1>All Wikis</h1>
-<%= link_to "New", new_wiki_path(@wiki), class: 'btn btn-success' %>
+<h1>Profile</h1>
+<h3><%="#{@user.email}" %></h3>
+<h2>Wikis</h2>
+<% if @user == current_user %>
+  <%= link_to "New", new_wiki_path(@wiki), class: 'btn btn-success' %>
+<% end %>
 
-<% @wikis.each do |wiki| %>
+<% @user.wikis.each do |wiki| %>
   <% if user_is_authorized_to_view_wikis?(wiki) %>
     <div class="media">
       <div class="media-body">
@@ -12,7 +16,7 @@
           <% end %>
         </h4>
         <h5 class="media-heading">
-          Created by <%= link_to "#{wiki.user.email}", user_path(wiki.user.id), class: 'username' %>
+          Created by <%= wiki.user.email %>
         </h5>
       </div>
     </div>

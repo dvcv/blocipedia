@@ -1,7 +1,7 @@
 require 'random_data'
 
 # Create Users
- 5.times do
+ 3.times do
    User.create!(
    email:    Faker::Internet.unique.email,
    password: RandomData.random_sentence,
