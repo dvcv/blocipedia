@@ -6,7 +6,6 @@
 <% end %>
 
 <% @user.wikis.each do |wiki| %>
-  <% if user_is_authorized_to_view_wikis?(wiki) %>
     <div class="media">
       <div class="media-body">
         <h4 class="media-heading">
@@ -20,5 +19,4 @@
         </h5>
       </div>
     </div>
-  <% end %>
 <% end %>
