@@ -38,8 +38,10 @@ users = User.all
 # Create Wikis
 50.times do
  Wiki.create!(
-   title:  Faker::Music.instrument,
-   body:   Faker::FamilyGuy.quote,
+   title:  Faker::HarryPotter.location,
+   body:   "### #{Faker::HarryPotter.book}
+    #{Faker::HarryPotter.quote}
+    [#{Faker::Internet.domain_name}](http://www.google.com)!",
    user: users.sample
  )
 end

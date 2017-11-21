@@ -22,6 +22,7 @@ gem 'figaro', '1.0'
 gem 'devise', '4.1.1'
 gem 'bootstrap-sass'
 gem 'stripe'
+gem 'redcarpet', '~> 3.0.0'
 
 group :development, :test do
     gem 'byebug'
