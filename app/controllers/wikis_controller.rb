@@ -1,6 +1,6 @@
 class WikisController < ApplicationController
   before_action :authorize_user, except: [:index, :show, :new, :create, :edit, :update]
-  before_action :user_is_authorized_to_edit_wiki, only: [:show, :edit, :update]
+  before_action :user_is_authorized_to_edit_private_wiki, only: [:show, :edit, :update]
 
   def index
     @wikis = policy_scope(Wiki)
@@ -80,9 +80,9 @@ private
     end
   end
 
-  def user_is_authorized_to_edit_wiki
+  def user_is_authorized_to_edit_private_wiki
     wiki = Wiki.find(params[:id])
-    unless current_user == wiki.user || current_user.admin? || wiki.users.include?(current_user)
+    if !(current_user == wiki.user || current_user.admin? || wiki.users.include?(current_user)) && wiki.private == true
       flash[:alert] = "You must be a collaborator to do that."
       redirect_to wikis_path
     end
