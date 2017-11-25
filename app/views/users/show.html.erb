@@ -20,7 +20,7 @@
       </div>
     </div>
 <% end %>
-<% if @collab_wikis.length > 0 %>
+<% if (@collab_wikis.length > 0 && @user == current_user) || (@collab_wikis.length > 0 && current_user.admin?) %>
   <h2>Collaborations</h2>
   <% @collab_wikis.each do |wiki| %>
       <div class="media">

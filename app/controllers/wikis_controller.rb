@@ -40,8 +40,8 @@ class WikisController < ApplicationController
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
 
-    #only let owner of wiki change the private settings and collaborators
-    if current_user == @wiki.user
+    #only let premium owner or admin change the private settings and collaborators
+    if current_user == @wiki.user || current_user.admin?
       @wiki.private = params[:wiki][:private]
       @wiki.user_ids = params[:collaborators]
     end
