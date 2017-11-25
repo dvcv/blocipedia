@@ -20,3 +20,21 @@
       </div>
     </div>
 <% end %>
+<% if @collab_wikis.length > 0 %>
+  <h2>Collaborations</h2>
+  <% @collab_wikis.each do |wiki| %>
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">
+            <%= link_to wiki.title, wiki %>
+            <%if wiki.private? %>
+            <%= "(Private)" %>
+            <% end %>
+          </h4>
+          <h5 class="media-heading">
+            Created by <%= link_to "#{wiki.user.email}", user_path(wiki.user.id), class: 'username' %>
+          </h5>
+        </div>
+      </div>
+  <% end %>
+<% end %>

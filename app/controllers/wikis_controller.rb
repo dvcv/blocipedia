@@ -32,12 +32,22 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    @users = User.all_except(current_user)
   end
   def update
     @wiki = Wiki.find(params[:id])
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
-    @wiki.private = params[:wiki][:private]
+
+    #only let owner of wiki change the private settings and collaborators
+    if current_user == @wiki.user
+      @wiki.private = params[:wiki][:private]
+      @wiki.user_ids = params[:collaborators]
+    end
+
+    if @wiki.private == false
+      @wiki.user_ids = nil
+    end
 
     if @wiki.save
       flash[:notice] = "Wiki was updated."

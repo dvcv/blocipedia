@@ -1,7 +1,23 @@
-<h1><%= @wiki.title %></h1>
+<h1>
+  <%= @wiki.title %>
+  <%if @wiki.private? %>
+    <%= "(Private)" %>
+  <% end %>
+</h1>
+
 <h5 class="media-heading">
-Created by <%= @wiki.user.email %>
+Created by <%= link_to "#{@wiki.user.email}", user_path(@wiki.user.id), class: 'username' %>
 </h5>
+
+<%if @wiki.private? %>
+  <h5>
+    Collaborators:
+    <% @wiki.users.each do |user|%>
+      <i> <%= link_to "#{user.email}", user_path(user.id), class: 'username' %> </i>
+    <% end %>
+  </h5>
+<% end %>
+
 <div class="row">
   <div class="col-md-8">
     <p><%= markdown(@wiki.body) %></p>
