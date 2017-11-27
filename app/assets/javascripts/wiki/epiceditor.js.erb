@@ -11,9 +11,9 @@ var opts = {
     autoSave: 100
   },
   theme: {
-    base: 'http://localhost:3000/assets/themes/base/epiceditor.self-0262bc8ae8dc4a01f7cb2d2564965578c1d9c4e4308e370a16b0043804e38b8b.css?body=1',
-    editor: 'http://localhost:3000/assets/themes/editor/epic-light.self-16036cfef7747b59c065bed40d477ca5a081def4d30fab7e66fbbb7f2076882e.css?body=1',
-    preview: 'http://localhost:3000/assets/themes/preview/bartik.self-53480b3227a0e6b46bd2a1b0e0c4bdf47e5f3748ed040b2d347f59500cccba34.css?body=1'
+    base: '<%= asset_path "../../../assets/themes/base/epiceditor" %>',
+    editor: '<%= asset_path "../../../assets/themes/editor/epic-light" %>',
+    preview: '<%= asset_path "../../../assets/themes/preview/bartik" %>'
   },
   button: {
     preview: true,
@@ -34,4 +34,4 @@ var opts = {
 }
 var editor = new EpicEditor(opts).load();
 
-console.log("1 + 1 = <%= 1+1 %>")
+console.log("1 + 1 = <%= asset_path "themes/base/epiceditor" %>")
