@@ -24,20 +24,20 @@
       <% end %>
     </div>
   <% end %>
-<% if ((wiki.user == current_user && current_user.premium?) || current_user.admin?) && !current_page?(new_wiki_path) %>
-  <div class="form-group">
-    <div class="collaborators">
-      <h6> Add Collaborators</h6>
-      <%=  %>
-      <% @users.each do |user| %>
-        <div class="user">
-        <%= check_box_tag "collaborators[]", user.id, @wiki.user_ids.include?(user.id) %>
-        <%= user.email %>
-        </div>
-      <% end %>
+
+  <% if user_is_authorized_to_view_collaborators?(wiki) %>
+    <div class="form-group">
+      <div class="collaborators">
+        <h6> Add Collaborators</h6>
+        <% @users.each do |user| %>
+          <div class="user">
+          <%= check_box_tag "collaborators[]", user.id, @wiki.user_ids.include?(user.id) %>
+          <%= user.email %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
   <div class="form-group">
     <%= f.submit "Save", class: 'btn btn-success' %>
   </div>
