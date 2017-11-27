@@ -11,11 +11,9 @@
  * file per style scope.
  *
  *= require themes/base/epiceditor
- *= require themes/editor/epic-dark
  *= require themes/editor/epic-light
  *= require themes/preview/bartik
- *= require themes/preview/github
- *= require themes/preview/preview-dark
+
 
  *= require_tree .
  *= require_self
