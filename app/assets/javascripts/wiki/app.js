@@ -13,6 +13,3 @@ $(document).ready(function(){
       addcollaborators();
     });
 });
-
-console.log("Hello");
-console.log("hello again");
