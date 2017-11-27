@@ -13,6 +13,6 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( wiki/app.js )
 Rails.application.config.assets.precompile += %w( wiki/epiceditor.js )
 
-Rails.application.config.assets.precompile += %w( themes/base/epiceditor.scss )
-Rails.application.config.assets.precompile += %w( themes/editor/epic-light.scss )
-Rails.application.config.assets.precompile += %w( themes/preview/bartik.scss )
+Rails.application.config.assets.precompile += %w( themes/base/epiceditor.css )
+Rails.application.config.assets.precompile += %w( themes/editor/epic-light.css )
+Rails.application.config.assets.precompile += %w( themes/preview/bartik.css )
