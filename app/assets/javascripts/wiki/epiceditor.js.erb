@@ -11,9 +11,9 @@ var opts = {
     autoSave: 100
   },
   theme: {
-    base: "<%= asset_path "../../../#{asset_path "themes/base/epiceditor"}" %>",
-    editor: "<%= asset_path "../../../#{asset_path "themes/editor/epic-light"}" %>",
-    preview: "<%= asset_path "../../../#{asset_path "themes/preview/bartik"}" %>"
+    base: "<%= "../../../#{asset_path "themes/base/epiceditor"}" %>",
+    editor: "<%= "../../../#{asset_path "themes/editor/epic-light"}" %>",
+    preview: "<%=  "../../../#{asset_path "themes/preview/bartik"}" %>"
   },
   button: {
     preview: true,
