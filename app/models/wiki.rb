@@ -3,5 +3,7 @@ class Wiki < ActiveRecord::Base
   has_many :collaborators, dependent: :destroy
   has_many :users, through: :collaborators
   validates :user, presence: true
+  validates :title, presence: true
+  validates :body, presence: true
   default_scope { order(created_at: :desc) }
 end

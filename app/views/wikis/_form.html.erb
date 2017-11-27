@@ -1,12 +1,22 @@
 <%= form_for [wiki] do |f| %>
-  <div class="form-group">
+  <% if wiki.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(wiki.errors.count, "error") %>.</h4>
+      <ul>
+        <% wiki.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_group_tag(wiki.errors[:title]) do %>
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
-  </div>
-  <div class="form-group">
+  <% end %>
+  <%= form_group_tag(wiki.errors[:body]) do %>
     <%= f.label :body %>
     <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>
-  </div>
+  <% end %>
   <% if user_is_authorized_for_private_button?(wiki) %>
     <div class="form-group">
       <%= f.label :private, class: 'checkbox' do %>
@@ -14,7 +24,7 @@
       <% end %>
     </div>
   <% end %>
-<% if (wiki.user == current_user && current_user.premium?) || current_user.admin?%>
+<% if ((wiki.user == current_user && current_user.premium?) || current_user.admin?) && current_page?(new_wiki_path) %>
   <div class="form-group">
     <div class="collaborators">
       <h6> Add Collaborators</h6>
