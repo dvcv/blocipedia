@@ -24,7 +24,7 @@
       <% end %>
     </div>
   <% end %>
-<% if ((wiki.user == current_user && current_user.premium?) || current_user.admin?) && current_page?(new_wiki_path) %>
+<% if ((wiki.user == current_user && current_user.premium?) || current_user.admin?) && !current_page?(new_wiki_path) %>
   <div class="form-group">
     <div class="collaborators">
       <h6> Add Collaborators</h6>
