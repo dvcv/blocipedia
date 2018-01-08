@@ -3,6 +3,9 @@
 ## Summary
 This project uses Ruby on Rails to create a simplified version of wikipedia. 
 
+## Live Site
+[Blocipedia](https://stormy-fortress-59256.herokuapp.com)
+
 ## Installation 
 
 Start by cloning the repository:
