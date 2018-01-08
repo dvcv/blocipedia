@@ -1,4 +1,4 @@
-## Wikipedia Clone with Rails
+# Wikipedia Clone with Rails
 
 ## Summary
 This project uses Ruby on Rails to create a simplified version of wikipedia. 
