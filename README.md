@@ -4,14 +4,14 @@
 This project uses Ruby on Rails to create a simplified version of wikipedia. 
 
 ## Live Site
-[Blocipedia](https://stormy-fortress-59256.herokuapp.com)
+[Skatepedia](https://stormy-fortress-59256.herokuapp.com)
 
 ## Installation 
 
 Start by cloning the repository:
 
 ```
-$ git clone https://github.com/dvcv/blocipedia.git <your-backend-project-name>
+$ git clone https://github.com/dvcv/skatepedia.git <your-backend-project-name>
 ```
 
 ## Configuration
