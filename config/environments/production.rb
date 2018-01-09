@@ -1,5 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  #allow static backgrounds in production
+  config.serve_static_assets = true
+  config.assets.compile = true
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -77,4 +80,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.default_url_options = { host: 'stormy-fortress-59256.herokuapp.com' }
+
+
 end
