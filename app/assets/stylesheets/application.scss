@@ -25,10 +25,18 @@
 }
 
 .username {
-  color: gray;
+  color: white;
+  font-weight: bold;
 }
 
 .edit-text-area {
   border: solid #ccc 1px;
   border-radius: 5px;
+}
+
+body {
+  background: url(skate.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
 }
